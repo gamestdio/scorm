@@ -7,19 +7,22 @@ Integrate your e-learning course with SCORM 1.2/2004 LMS.
 This implementation is highly based on a battle tested version from
 [pipwerks/scorm-api-wrapper](https://github.com/pipwerks/scorm-api-wrapper).
 
-- Require with modern JavaScript/TypeScript
-- Works with SCORM 1.2 and 2004
-
 ## Why?
 
 No SCORM wrapper had support for modern JavaScript/TypeScript.
+
 ## Usage
 
 ```typescript
 import { scorm } from "@gamestdio/scorm";
 
+// initialize connection with parent/opener windows
 scorm.initialize();
-scorm.set();
+
+scorm.set('cmi.core.lesson_status', 'Not Attempted');
+scorm.commit();
+
+// finish e-learning session
 scorm.terminate();
 ```
 
