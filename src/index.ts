@@ -195,18 +195,18 @@ export class Scorm {
 
                         if (this.handleCompletionStatus) {
                             //Automatically set new launches to incomplete
-                            this.completionStatus = this.getStatus('get');
+                            this.completionStatus = this.status();
 
                             if (this.completionStatus) {
                                 switch (this.completionStatus) {
                                         //Both SCORM 1.2 and 2004
                                     case 'not attempted':
-                                        this.getStatus('set', 'incomplete');
+                                        this.status('incomplete');
                                         break;
 
                                         //SCORM 2004 only
                                     case 'unknown':
-                                        this.getStatus('set', 'incomplete');
+                                        this.status('incomplete');
                                         break;
 
                                         //Additional options, presented here in case you'd like to use them
@@ -455,42 +455,39 @@ export class Scorm {
         return success;
     }
 
-    getStatus (action, status?) {
+    status (status?: string) {
         let success: any = false,
-            traceMsgPrefix = 'scorm.getStatus failed',
-            cmi = '';
+            traceMsgPrefix = 'scorm.status failed',
+            cmi = '',
+            action = (arguments.length === 0) ? 'get' : 'set';
 
-        if (action !== null) {
-            switch (scorm.version) {
-                case '1.2':
-                    cmi = 'cmi.core.lesson_status';
-                    break;
-                case '2004':
-                    cmi = 'cmi.completion_status';
-                    break;
-            }
+        switch (scorm.version) {
+            case '1.2':
+                cmi = 'cmi.core.lesson_status';
+                break;
+            case '2004':
+                cmi = 'cmi.completion_status';
+                break;
+        }
 
-            switch (action) {
-                case 'get':
-                    success = this.get(cmi);
-                    break;
+        switch (action) {
+            case 'get':
+                success = this.get(cmi);
+                break;
 
-                case 'set':
-                    if (status !== null) {
-                        success = this.set(cmi, status);
-                    } else {
-                        success = false;
-                        debug(traceMsgPrefix + ': status was not specified.');
-                    }
-
-                    break;
-
-                default:
+            case 'set':
+                if (status !== null) {
+                    success = this.set(cmi, status);
+                } else {
                     success = false;
-                    debug(traceMsgPrefix + ': no valid action was specified.');
-            }
-        } else {
-            debug(traceMsgPrefix + ': action was not specified.');
+                    debug(traceMsgPrefix + ': status was not specified.');
+                }
+
+                break;
+
+            default:
+                success = false;
+                debug(traceMsgPrefix + ': no valid action was specified.');
         }
 
         return success;

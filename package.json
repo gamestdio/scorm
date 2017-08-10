@@ -1,6 +1,6 @@
 {
   "name": "@gamestdio/scorm",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "SCORM 1.2/2004 Wrapper for JavaScript/TypeScript",
   "main": "lib/index.js",
   "scripts": {

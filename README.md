@@ -28,8 +28,10 @@ scorm.terminate();
 
 ## Testing
 
-Create a free account on [SCORM Cloud](https://cloud.scorm.com), and upload your
-e-learning course into the platform.
+1. Create a free account on [SCORM Cloud](https://cloud.scorm.com)
+2. Copy and paste the `package/*` files into your e-learning course.
+3. Edit the `imsmanifest.xml` to meet your needs.
+4. Upload your e-learning course to SCORM Cloud.
 
 ## References
 
