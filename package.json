@@ -1,0 +1,16 @@
+{
+  "name": "@gamestdio/scorm",
+  "version": "0.1.0",
+  "description": "SCORM 1.2/2004 Wrapper for JavaScript/TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "docs": "typedoc --excludePrivate --excludeNotExported --out docs --mode file --entryPoint index",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Endel Dreyer",
+  "license": "MIT",
+  "devDependencies": {
+    "typedoc": "^0.8.0",
+    "typescript": "^2.4.2"
+  }
+}

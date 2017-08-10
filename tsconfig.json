@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "lib",
+    "target": "es5",
+    "module": "commonjs"
+  },
+  "include": [
+    "src/*.ts"
+  ]
+}
