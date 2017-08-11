@@ -29,7 +29,7 @@ scorm.terminate();
 ## Testing
 
 1. Create a free account on [SCORM Cloud](https://cloud.scorm.com)
-2. Copy and paste the `package/*` files into your e-learning course.
+2. Download and include one of the [XML Schema Definition files](https://scorm.com/scorm-explained/technical-scorm/content-packaging/xml-schema-definition-files/) into your package.
 3. Edit the `imsmanifest.xml` to meet your needs.
 4. Upload your e-learning course to SCORM Cloud.
 
