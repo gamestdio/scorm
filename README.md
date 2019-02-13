@@ -1,4 +1,4 @@
-# @gamestdio/scorm
+# @gamestdio/scorm <a href="https://patreon.com/endel" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/endpoint.svg?url=https%3A%2F%2Fshieldsio-patreon.herokuapp.com%2Fendel&style=for-the-badge" alt="Donate on Patreon"/></a>
 
 > SCORM 1.2/2004 Wrapper for JavaScript/TypeScript
 
