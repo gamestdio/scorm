@@ -161,9 +161,18 @@ export class Scorm {
         handleCompletionStatus?: boolean; // Whether or not the wrapper should automatically handle the initial completion status
     } = {}) {
         this.version = config.version;
-        this.handleExitMode = config.handleExitMode || true;
-        this.handleCompletionStatus = config.handleCompletionStatus || true;
-        this.isDebugActive = config.debug === undefined ? !!config.debug : true;
+
+        this.handleExitMode = (config.handleExitMode === undefined)
+          ? !!config.handleExitMode
+          : true;
+
+        this.handleCompletionStatus = (config.handleCompletionStatus === undefined)
+          ? !!config.handleCompletionStatus
+          : true;
+
+        this.isDebugActive = (config.debug === undefined)
+          ? !!config.debug
+          : true;
     }
 
     initialize () {
