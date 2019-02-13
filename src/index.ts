@@ -163,7 +163,7 @@ export class Scorm {
         this.version = config.version;
         this.handleExitMode = config.handleExitMode || true;
         this.handleCompletionStatus = config.handleCompletionStatus || true;
-        this.isDebugActive = config.debug || true;
+        this.isDebugActive = config.debug === undefined ? !!config.debug : true;
     }
 
     initialize () {
