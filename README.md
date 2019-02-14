@@ -16,6 +16,11 @@ No SCORM wrapper had support for modern JavaScript/TypeScript.
 ```typescript
 import { scorm } from "@gamestdio/scorm";
 
+// set configuration options
+scorm.configure({
+    debug: true
+});
+
 // initialize connection with parent/opener windows
 scorm.initialize();
 
